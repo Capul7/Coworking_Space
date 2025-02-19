@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "reserva")
-public class Reserva {
+public class ModelReserva {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,11 +21,11 @@ public class Reserva {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    private ModelUsuario modelUsuario;
 
     @ManyToOne
     @JoinColumn(name = "sala_id")
-    private Sala sala;
+    private ModelSala modelSala;
 
     private LocalDateTime fechaHoraInicio;
     private LocalDateTime fechaHoraFin;

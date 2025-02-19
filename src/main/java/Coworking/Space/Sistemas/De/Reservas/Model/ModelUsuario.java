@@ -2,7 +2,6 @@ package Coworking.Space.Sistemas.De.Reservas.Model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.util.List;
 
 @Data
@@ -12,15 +11,15 @@ import java.util.List;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "sala")
-public class Sala {
+@Table(name = "usuarios")
+public class ModelUsuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nombre;
-    private int capacidad;
-    private boolean estado; //disponoble o ocupada
+    private String correo;
+    private String contrasena;
 
-    @OneToMany (mappedBy = "sala", cascade = CascadeType.ALL)
-    private List<Reserva> reservas;
+    @OneToMany(mappedBy = "modelUsuario", cascade = CascadeType.ALL)
+    private List<ModelReserva> modelReservas;
 }
