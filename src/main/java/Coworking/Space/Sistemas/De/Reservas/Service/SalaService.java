@@ -26,6 +26,16 @@ public class SalaService {
         salaRepository.save(sala);
     }
 
+    //Metodo para modificar las salas
+    public void actualizaSala(ModelSala sala) {
+        salaRepository.save(sala);
+    }
+
+    //Metodo para eliminar las salas
+    public void eliminarSala(ModelSala sala) {
+        salaRepository.delete(sala);
+    }
+
     //Metodo para listar las salas disponibles
     public List<ModelSala> listarSalasDisponibles() {
         return salaRepository.findByEstadoTrue();
